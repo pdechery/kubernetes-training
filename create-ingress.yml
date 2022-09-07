@@ -1,0 +1,17 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: k8-training-ingress
+spec:
+  rules:
+    - host: kubernetes-training.io
+      http:
+        paths: 
+          - path: /hello-world
+            pathType: Prefix
+            backend:
+              service: 
+                name: k8-training-service
+                port:
+                  number: 5000
