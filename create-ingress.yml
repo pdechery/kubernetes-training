@@ -8,10 +8,10 @@ spec:
     - host: kubernetes-training.io
       http:
         paths: 
-          - path: /hello-world
+          - path: /
             pathType: Prefix
             backend:
               service: 
                 name: k8-training-service
                 port:
-                  number: 5000
+                  number: 5005
