@@ -2,9 +2,9 @@ FROM python:3
 
 WORKDIR app/
 
-COPY app.py .
+COPY app/app.py .
 
-COPY requirements.txt .
+COPY app/requirements.txt .
 
 RUN pip install -r requirements.txt
 

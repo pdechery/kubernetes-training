@@ -6,7 +6,7 @@ RUN apk add curl
 
 WORKDIR /app 
 
-COPY donothing.sh .
+COPY utils/donothing.sh .
 
 RUN chmod a+x donothing.sh
 

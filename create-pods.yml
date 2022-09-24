@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
     - name: flask-app-pod
-      image: flask-app 
+      image: teste-flask
       resources:
         requests:
           cpu: 100m
@@ -22,7 +22,13 @@ spec:
       ports:
         - containerPort: 5000
           name: flask-app-port
+      volumeMounts:
+        - mountPath: '/etc/test-volume'
+          name: 'test-volume'
       imagePullPolicy: Never
+  volumes:
+    - name: 'test-volume'
+      emptyDir: {}
 ---
 apiVersion: v1
 kind: Pod
@@ -33,5 +39,5 @@ metadata:
 spec:
   containers:
     - name: alpine-app-pod
-      image: alpine-app
+      image: test-alpine
       imagePullPolicy: Never
